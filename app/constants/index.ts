@@ -1,1 +1,1 @@
-export * as COLORS from "./colors";
+export * as MOCKDATA from "./mocks";

@@ -1,3 +1,4 @@
+import { SIZE } from "@theme/styles";
 import { IColor } from "@types";
 import React, { Component } from "react";
 
@@ -6,7 +7,11 @@ const ColorCell = ({ color }: IColor) => {
     <>
       <div
         className="color-cell"
-        style={{ background: `#${color}`, width: 100, height: 40 }}
+        style={{
+          background: `#${color}`,
+          width: SIZE.COLOR_CELL.WIDTH,
+          height: SIZE.COLOR_CELL.HEIGHT,
+        }}
       ></div>
     </>
   );

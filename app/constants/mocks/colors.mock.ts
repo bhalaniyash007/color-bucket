@@ -1,6 +1,6 @@
 import { IColorPaleteBucket } from "@types";
 
-const mockColorsPalletes: IColorPaleteBucket[] = [
+const colorPalletes: IColorPaleteBucket[] = [
   {
     colorBucket: [
       { color: "57C5B6" },
@@ -51,4 +51,4 @@ const mockColorsPalletes: IColorPaleteBucket[] = [
   },
 ];
 
-export { mockColorsPalletes };
+export { colorPalletes };

@@ -1,20 +1,27 @@
 "use client";
 import * as React from "react";
-import { Component } from "react";
 import { Stack } from "@mui/material";
 import ColorCell from "./ColorCell";
 import { IColorPaleteBucket } from "../../types";
-import { COLORS } from "@constants";
+import { MOCKDATA } from "@constants";
+import { COLORS } from "@styles";
 
 const ColorPalete = () => {
   return (
     <>
-      {COLORS.mockColorsPalletes.map((colorPallete: IColorPaleteBucket) => {
+      {MOCKDATA.colorPalletes.map((colorPallete: IColorPaleteBucket) => {
         return (
           <>
             <div
               className="color-palete"
-              style={{ padding: "20px", overflow: "auto" }}
+              style={{
+                padding: "5px",
+                overflow: "auto",
+                display: "inline-block",
+                background: COLORS.COLOR_BUCKET.border,
+                borderRadius: "8px",
+                margin: "20px",
+              }}
             >
               <Stack spacing={0}>
                 <ColorCell color={colorPallete.colorBucket[0].color} />
