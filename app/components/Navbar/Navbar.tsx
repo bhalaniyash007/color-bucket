@@ -5,6 +5,27 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
+const AppLogo = () => {
+  return (
+    <>
+      <Toolbar>
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{
+            flexGrow: 1,
+            display: { xs: "none", sm: "block" },
+            fontWeight: 800,
+          }}
+        >
+          Color <span style={{ color: "#3399FF" }}>Bucket</span>
+        </Typography>
+      </Toolbar>
+    </>
+  );
+};
+
 export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -16,20 +37,7 @@ export default function NavBar() {
           boxShadow: "none",
         }}
       >
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
-              fontWeight: 800,
-            }}
-          >
-            Color <span style={{ color: "#3399FF" }}>Bucket</span>
-          </Typography>
-        </Toolbar>
+        <AppLogo />
       </AppBar>
     </Box>
   );

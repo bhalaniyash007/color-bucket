@@ -1,21 +1,17 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "./page.module.css";
-import ColorPalete from "./components/ColorPalete/ColorPalete";
-import { ThemeProvider } from "@mui/material";
-import { THEME } from "@theme/theme";
+import ColorPalete from "@components/ColorPalete/ColorPalete";
 import NavBar from "@components/Navbar/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import ThemeProvider from "@components/ThemeProvider/ThemeProvider";
 
 export default function Home() {
   return (
     <>
-      <div className="navbar" style={{ paddingBottom: "70px" }}>
-        <NavBar />
-      </div>
-      <h1>Color Bucket App</h1>
-      <ColorPalete />
+      <ThemeProvider>
+        <div className="navbar" style={{ paddingBottom: "70px" }}>
+          <NavBar />
+        </div>
+        <h1>Color Bucket App</h1>
+        <ColorPalete />
+      </ThemeProvider>
     </>
   );
 }
