@@ -1,3 +1,4 @@
+import useCopyToClipboard from "@hooks/copyToClipboard.hook";
 import { SIZE } from "@theme/styles";
 import { THEME } from "@theme/theme";
 import { IColor } from "@types";
@@ -6,21 +7,39 @@ import React, { Component, useState } from "react";
 interface IColorCode {
   color: string;
 }
+
 const ColorCode = ({ color }: IColorCode) => {
+  const [copyValue, setCopyValue] = useCopyToClipboard();
+  const [copyStatus, setCopyStatus] = useState(false);
+
+  const copyValueHandler = () => {
+    setCopyValue(colorString).then(() => setCopyStatus(true));
+  };
+
+  const colorString = `#${color}`;
   return (
     <>
-      <div
-        className="color-code"
-        style={{
-          padding: "5px",
-          borderRadius: "5px",
-          background: "#00000020",
-          marginTop: "25px",
-          marginLeft: "5px",
-          maxWidth: "80px",
-        }}
-      >
-        <p>{`#${color}`}</p>
+      <div className="color-code">
+        <button
+          style={{
+            padding: "5px",
+            borderRadius: "5px",
+            background: "#00000020",
+            marginTop: "25px",
+            marginLeft: "5px",
+            maxWidth: "80px",
+            border: "0px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            setCopyValue(colorString).then(() => {
+              setCopyStatus(true);
+              setTimeout(() => setCopyStatus(false), 1000);
+            });
+          }}
+        >
+          <p>{copyStatus ? "Copied !" : colorString}</p>
+        </button>
       </div>
     </>
   );
@@ -54,4 +73,5 @@ const ColorCell = ({ color }: IColor) => {
   );
 };
 
+//
 export default ColorCell;
