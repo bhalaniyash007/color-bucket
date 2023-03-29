@@ -49,6 +49,30 @@ const colorPalletes: IColorPaleteBucket[] = [
       { color: "002B5B" },
     ],
   },
+  {
+    colorBucket: [
+      { color: "BBD6B8" },
+      { color: "AEC2B6" },
+      { color: "94AF9F" },
+      { color: "DBE4C6" },
+    ],
+  },
+  {
+    colorBucket: [
+      { color: "37306B" },
+      { color: "66347F" },
+      { color: "9E4784" },
+      { color: "D27685" },
+    ],
+  },
+  {
+    colorBucket: [
+      { color: "F6E1C3" },
+      { color: "E9A178" },
+      { color: "A84448" },
+      { color: "7A3E65" },
+    ],
+  },
 ];
 
 export { colorPalletes };
