@@ -3,6 +3,9 @@ const COLOR_CELL = {
   WIDTH: "200px",
 };
 
+const APP_SIDE_BAR = {
+  WIDTH: "240px",
+};
 /**
  * Height and Width styling (size) for MUI Theme
  */
@@ -20,6 +23,7 @@ export const SIZE: I_SIZE = {
     WIDTH: "100px",
   },
   COLOR_CELL,
+  APP_SIDE_BAR,
 };
 
 export interface I_SIZE {
@@ -37,6 +41,9 @@ export interface I_SIZE {
   };
   COLOR_CELL: {
     HEIGHT: string | number;
+    WIDTH: string | number;
+  };
+  APP_SIDE_BAR: {
     WIDTH: string | number;
   };
 }

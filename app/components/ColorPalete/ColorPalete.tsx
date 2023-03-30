@@ -1,10 +1,10 @@
 "use client";
 import * as React from "react";
 import { Stack } from "@mui/material";
-import ColorCell from "./ColorCell";
-import { IColorPaleteBucket } from "../../types";
 import { MOCKDATA } from "@constants";
 import { COLORS } from "@styles";
+import ColorCell from "@components/ColorCell";
+import { IColorPaleteBucket } from "@types";
 
 const ColorPalete = () => {
   return (
