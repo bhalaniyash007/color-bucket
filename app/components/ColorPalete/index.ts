@@ -1,2 +1,2 @@
 export * from "./ColorPalete";
-export * from "./ColorCell";
+export * from "../ColorCell/ColorCell";

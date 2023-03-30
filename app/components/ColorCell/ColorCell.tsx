@@ -1,6 +1,6 @@
+import Typography from "@components/Typography/Typography";
 import useCopyToClipboard from "@hooks/copyToClipboard.hook";
 import { SIZE } from "@theme/styles";
-import { THEME } from "@theme/theme";
 import { IColor } from "@types";
 import React, { Component, useState } from "react";
 
@@ -38,7 +38,11 @@ const ColorCode = ({ color }: IColorCode) => {
             });
           }}
         >
-          <p>{copyStatus ? "Copied !" : colorString}</p>
+          <Typography
+            tag="caption"
+            text={copyStatus ? "Copied !" : colorString}
+            color={"white"}
+          />
         </button>
       </div>
     </>

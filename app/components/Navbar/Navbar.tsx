@@ -3,24 +3,29 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import Typography from "@components/Typography/Typography";
 
 const AppLogo = () => {
   return (
     <>
       <Toolbar>
-        <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{
-            flexGrow: 1,
-            display: { xs: "none", sm: "block" },
-            fontWeight: 800,
+        <div
+          className="logo-vector"
+          style={{
+            width: "30px",
+            height: "30px",
+            background: "linear-gradient(90deg,#E6425E 0%,#A64166 100%)",
+            border: "2px",
           }}
-        >
-          Color <span style={{ color: "#3399FF" }}>Bucket</span>
-        </Typography>
+        ></div>
+        <p>
+          <Typography
+            tag="h5"
+            text="Color Bucket"
+            color={"GrayText"}
+            fontWeight={600}
+          />
+        </p>
       </Toolbar>
     </>
   );
@@ -32,9 +37,9 @@ export default function NavBar() {
       <AppBar
         position="fixed"
         sx={{
-          background: "transparent",
-          backdropFilter: "blur(10px)",
+          background: "#FFFFFF",
           boxShadow: "none",
+          zIndex: 2,
         }}
       >
         <AppLogo />
