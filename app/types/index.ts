@@ -1,3 +1,5 @@
+import { createContext } from "react";
+
 export type IColor = {
   color: string;
 };
@@ -22,3 +24,14 @@ export type HtmlTags =
   | "subtitle2"
   | "body2"
   | undefined;
+
+interface ICreateColorPaletteContext {
+  selectedPaletteIndex: number;
+  pickedColor: string;
+}
+
+export const createColorPaletteContext =
+  createContext<ICreateColorPaletteContext>({
+    selectedPaletteIndex: 0,
+    pickedColor: "000000",
+  });

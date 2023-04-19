@@ -1,8 +1,8 @@
+import React, { Component, useState } from "react";
 import Typography from "@components/Typography/Typography";
 import useCopyToClipboard from "@hooks/copyToClipboard.hook";
 import { SIZE } from "@theme/styles";
 import { IColor } from "@types";
-import React, { Component, useState } from "react";
 
 interface IColorCode {
   color: string;
@@ -51,6 +51,7 @@ const ColorCode = ({ color }: IColorCode) => {
 
 const ColorCell = ({ color }: IColor) => {
   const [hover, setHover] = useState(false);
+  
   const onHover = () => {
     setHover(true);
   };
@@ -73,6 +74,7 @@ const ColorCell = ({ color }: IColor) => {
       >
         {hover ? <ColorCode color={color} /> : <></>}
       </div>
+      
     </>
   );
 };
