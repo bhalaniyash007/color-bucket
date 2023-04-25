@@ -49,7 +49,24 @@ const CreateColorPallete = () => {
   return (
     <>
       <createColorPaletteContext.Provider
-        value={{ selectedPaletteIndex: 0, pickedColor: selectedColor }}
+        value={{
+          selectedPaletteIndex: 0,
+          pickedColor: selectedColor,
+          colorBucket: [
+            {
+              color: "2A2F4F",
+            },
+            {
+              color: "917FB3",
+            },
+            {
+              color: "E5BEEC",
+            },
+            {
+              color: "FDE2F3",
+            },
+          ],
+        }}
       >
         <Typography>New Color: {selectedColor}</Typography>
         <Grid container>

@@ -27,11 +27,28 @@ export type HtmlTags =
 
 interface ICreateColorPaletteContext {
   selectedPaletteIndex: number;
+  setSelectedPaletteIndex?: (paletteIndex: number) => {};
   pickedColor: string;
+  colorBucket: IColor[];
+  setPaletteColor?: (paletteIndex: number, color: string) => {};
 }
 
 export const createColorPaletteContext =
   createContext<ICreateColorPaletteContext>({
     selectedPaletteIndex: 0,
     pickedColor: "000000",
+    colorBucket: [
+      {
+        color: "2A2F4F",
+      },
+      {
+        color: "917FB3",
+      },
+      {
+        color: "E5BEEC",
+      },
+      {
+        color: "FDE2F3",
+      },
+    ],
   });

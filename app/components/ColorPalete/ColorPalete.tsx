@@ -5,7 +5,8 @@ import { MOCKDATA } from "@constants";
 import { COLORS } from "@styles";
 import ColorCell from "@components/ColorCell";
 import { IColorPaleteBucket, createColorPaletteContext } from "@types";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import Typography from "@components/Typography/Typography";
 
 interface IColorPaleteProps {
   colorPallete: IColorPaleteBucket;
@@ -16,9 +17,14 @@ const ColorPalete = ({
   colorPallete,
   stateChangeHandler,
 }: IColorPaleteProps) => {
-  const { selectedPaletteIndex, pickedColor } = useContext(
+  const { selectedPaletteIndex, pickedColor, colorBucket } = useContext(
     createColorPaletteContext
   );
+  const [paletteIndex, setPaletteIndex] = useState(0);
+  const onPaletteClickHandler = (paletteIndex: number) => {
+    setPaletteIndex(paletteIndex);
+    colorBucket[paletteIndex].color = pickedColor;
+  };
   return (
     <>
       {/* {MOCKDATA.colorPalletes.map((colorPallete: IColorPaleteBucket) => { */}
@@ -36,21 +42,40 @@ const ColorPalete = ({
           margin: "20px",
         }}
       >
+        <Typography>Color 1: {colorBucket[0].color}</Typography>
+        <Typography>Color 2: {colorBucket[1].color}</Typography>
+        <Typography>Color 3: {colorBucket[2].color}</Typography>
+        <Typography>Color 4: {colorBucket[3].color}</Typography>
         <Stack spacing={0}>
           <div
             onClick={() => {
               // stateChangeHandler && stateChangeHandler(0);
+              onPaletteClickHandler(0);
             }}
           >
             <ColorCell
               color={
-                selectedPaletteIndex === 0
+                paletteIndex === 0
                   ? pickedColor
                   : colorPallete.colorBucket[0].color
               }
             />
           </div>
-          <ColorCell color={colorPallete.colorBucket[1].color} />
+          <div
+            onClick={() => {
+              // stateChangeHandler && stateChangeHandler(0);
+              onPaletteClickHandler(1);
+            }}
+          >
+            <ColorCell
+              color={
+                paletteIndex === 1
+                  ? pickedColor
+                  : colorPallete.colorBucket[1].color
+              }
+            />
+          </div>
+          {/* <ColorCell color={colorPallete.colorBucket[1].color} /> */}
           <ColorCell color={colorPallete.colorBucket[2].color} />
           <ColorCell color={colorPallete.colorBucket[3].color} />
         </Stack>
