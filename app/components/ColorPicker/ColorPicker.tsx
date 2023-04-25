@@ -1,6 +1,6 @@
-import { IColor } from "@types";
-import { useState } from "react";
-import { SketchPicker } from "react-color";
+import { IColor } from '@types';
+import { useState } from 'react';
+import { SketchPicker } from 'react-color';
 
 interface IColorPickerProps {
   selectedColor: IColor;
@@ -8,12 +8,10 @@ interface IColorPickerProps {
 }
 
 const ColorPicker = ({
-  selectedColor = { color: "000000" },
+  selectedColor = { color: '000000' },
   setColorHandler,
 }: IColorPickerProps) => {
-  const [sketchPickerColor, setSketchPickerColor] = useState(
-    selectedColor.color
-  );
+  const [sketchPickerColor, setSketchPickerColor] = useState(selectedColor.color);
   return (
     <>
       <SketchPicker

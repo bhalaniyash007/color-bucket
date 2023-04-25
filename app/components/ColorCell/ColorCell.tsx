@@ -1,8 +1,8 @@
-import React, { Component, useState } from "react";
-import Typography from "@components/Typography/Typography";
-import useCopyToClipboard from "@hooks/copyToClipboard.hook";
-import { SIZE } from "@theme/styles";
-import { IColor } from "@types";
+import React, { Component, useState } from 'react';
+import Typography from '@components/Typography/Typography';
+import useCopyToClipboard from '@hooks/copyToClipboard.hook';
+import { SIZE } from '@theme/styles';
+import { IColor } from '@types';
 
 interface IColorCode {
   color: string;
@@ -22,27 +22,22 @@ const ColorCode = ({ color }: IColorCode) => {
       <div className="color-code">
         <button
           style={{
-            padding: "5px",
-            borderRadius: "5px",
-            background: "#00000020",
-            marginTop: "25px",
-            marginLeft: "5px",
-            maxWidth: "80px",
-            border: "0px",
-            cursor: "pointer",
+            padding: '5px',
+            borderRadius: '5px',
+            background: '#00000020',
+            marginTop: '25px',
+            marginLeft: '5px',
+            maxWidth: '80px',
+            border: '0px',
+            cursor: 'pointer',
           }}
           onClick={() => {
             setCopyValue(colorString).then(() => {
               setCopyStatus(true);
               setTimeout(() => setCopyStatus(false), 1000);
             });
-          }}
-        >
-          <Typography
-            tag="caption"
-            text={copyStatus ? "Copied !" : colorString}
-            color={"white"}
-          />
+          }}>
+          <Typography tag="caption" text={copyStatus ? 'Copied !' : colorString} color={'white'} />
         </button>
       </div>
     </>
@@ -51,7 +46,7 @@ const ColorCode = ({ color }: IColorCode) => {
 
 const ColorCell = ({ color }: IColor) => {
   const [hover, setHover] = useState(false);
-  
+
   const onHover = () => {
     setHover(true);
   };
@@ -70,11 +65,9 @@ const ColorCell = ({ color }: IColor) => {
           height: SIZE.COLOR_CELL.HEIGHT,
         }}
         onMouseEnter={onHover}
-        onMouseLeave={onLeave}
-      >
+        onMouseLeave={onLeave}>
         {hover ? <ColorCode color={color} /> : <></>}
       </div>
-      
     </>
   );
 };

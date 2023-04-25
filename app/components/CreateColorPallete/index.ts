@@ -1,1 +1,1 @@
-export * from "./CreateColorPallete";
+export * from './CreateColorPallete';

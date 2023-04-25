@@ -1,3 +1,51 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
+echo '🏗️👷 Styling, testing and building witsby before committing'
+
+# Check Prettier standards
+yarn format:check ||
+(
+    echo 'Prettier Check Failed.
+          Run yarn format:check, add changes and try commit again.';
+    false;
+)
+
+# Check ESLint Standards
+yarn lint:check ||
+(
+        echo 'ESLint Check Failed.
+          Make the required changes listed above, add changes and try to commit again.'
+        false;
+)
+
+# Check tsconfig standards
+yarn types:check ||
+(
+    echo 'Failed Type check.
+          Make the changes required above.'
+    false;
+)
+
+
+# remove .next folder
+echo 'Trying to clean .next folder'
+
+yarn clean || (
+  echo '.next folder removed'
+)
+
+
+# If everything passes... Now we can commit
+echo 'Trying to build now.'
+
+yarn build ||
+(
+    echo '❌ Build failed ❌
+            Next build failed: View the errors above to see why.
+    '
+    false;
+)
+
+# If everything passes... Now we can commit
+echo '✅ Build completed ✅'

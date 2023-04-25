@@ -1,22 +1,32 @@
-"use client";
-import ColorPalete from "@components/ColorPalete/ColorPalete";
-import PermanentDrawerLeft from "@components/AppSideBar/AppSideBar";
-import NavBar from "@components/Navbar/Navbar";
-import ThemeProvider from "@components/ThemeProvider/ThemeProvider";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@components/Typography";
+'use client';
+import ColorPalete from '@components/ColorPalete/ColorPalete';
+import PermanentDrawerLeft from '@components/AppSideBar/AppSideBar';
+import NavBar from '@components/Navbar/Navbar';
+import ThemeProvider from '@components/ThemeProvider/ThemeProvider';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@components/Typography';
+import { MOCKDATA } from '@constants';
 
 const App = () => {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: 'flex' }}>
       {/* <CssBaseline /> */}
       <NavBar />
       <PermanentDrawerLeft />
       <Box component="main" sx={{ flexGrow: 1, pl: 3 }}>
         <Toolbar />
         <Typography tag="h5" text="Design your bucket of happiness" />
-        <ColorPalete />
+        <ColorPalete
+          colorPallete={{
+            colorBucket: [
+              { color: '#000000' },
+              { color: '#000000' },
+              { color: '#000000' },
+              { color: '#000000' },
+            ],
+          }}
+        />
       </Box>
     </Box>
   );

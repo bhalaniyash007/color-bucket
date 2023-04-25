@@ -1,23 +1,23 @@
-"use client";
-import ColorPalete from "@components/ColorPalete/ColorPalete";
-import ColorPicker from "@components/ColorPicker/ColorPicker";
-import { Grid, Typography } from "@mui/material";
-import { IColorPaleteBucket, createColorPaletteContext } from "@types";
-import { createContext, useState } from "react";
+'use client';
+import ColorPalete from '@components/ColorPalete/ColorPalete';
+import ColorPicker from '@components/ColorPicker/ColorPicker';
+import { Grid, Typography } from '@mui/material';
+import { IColorPaleteBucket, createColorPaletteContext } from '@types';
+import { createContext, useState } from 'react';
 
 const DEFAULT_COLOR_BUCKET: IColorPaleteBucket = {
   colorBucket: [
     {
-      color: "2A2F4F",
+      color: '2A2F4F',
     },
     {
-      color: "917FB3",
+      color: '917FB3',
     },
     {
-      color: "E5BEEC",
+      color: 'E5BEEC',
     },
     {
-      color: "FDE2F3",
+      color: 'FDE2F3',
     },
   ],
 };
@@ -41,7 +41,7 @@ const ColorBucket = ({ pickedColor }: IColorBucketProps) => {
 };
 
 const CreateColorPallete = () => {
-  const [selectedColor, setSelectedColor] = useState("000000");
+  const [selectedColor, setSelectedColor] = useState('000000');
 
   const selectNewColorHandler = (newColor: string) => {
     setSelectedColor(newColor);
@@ -54,30 +54,29 @@ const CreateColorPallete = () => {
           pickedColor: selectedColor,
           colorBucket: [
             {
-              color: "2A2F4F",
+              color: '2A2F4F',
             },
             {
-              color: "917FB3",
+              color: '917FB3',
             },
             {
-              color: "E5BEEC",
+              color: 'E5BEEC',
             },
             {
-              color: "FDE2F3",
+              color: 'FDE2F3',
             },
           ],
-        }}
-      >
+        }}>
         <Typography>New Color: {selectedColor}</Typography>
         <Grid container>
-          <Grid sm={6} md={6} sx={{ textAlign: "center" }}>
+          <Grid sm={6} md={6} sx={{ textAlign: 'center' }}>
             <ColorBucket pickedColor={selectedColor} />
           </Grid>
           <Grid sm={6} md={6}>
             <ColorPicker
               setColorHandler={selectNewColorHandler}
               selectedColor={{
-                color: "000000",
+                color: '000000',
               }}
             />
           </Grid>

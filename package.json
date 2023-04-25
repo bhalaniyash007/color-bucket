@@ -5,9 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:check": "yarn format:check && yarn lint:check && yarn types:check && yarn clean && yarn build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint:check": "eslint . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "eslint . --fix --quiet --ignore-path .eslintignore",
+    "types:check": "tsc --pretty --noEmit",
+    "clean": "rimraf .next"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^17.6.1",
@@ -22,6 +29,7 @@
     "eslint-config-next": "13.2.4",
     "lint-staged": "^13.2.1",
     "next": "13.2.4",
+    "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "18.2.0",

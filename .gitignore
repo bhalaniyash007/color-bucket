@@ -27,13 +27,28 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+.env.production
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
-# VS Code
 .vscode/
+
+# npm
+# .npmrc
+.idea/
+*.patch
+
+# yarn
+yarn.lock
+
+
+# Sentry
+.sentryclirc
+
+# Sentry
+next.config.original.js
