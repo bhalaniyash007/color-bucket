@@ -1,4 +1,5 @@
 'use client';
+
 import { useMemo, CSSProperties, ReactNode } from 'react';
 import { styled, Typography as MuiTypography, TypographyProps } from '@mui/material';
 import { HtmlTags } from '@types';

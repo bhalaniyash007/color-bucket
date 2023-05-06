@@ -1,1 +1,1 @@
-export * from './CreateColorPallete';
+export { default as CreateColorPallete } from './CreateColorPallete';

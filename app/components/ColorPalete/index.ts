@@ -1,2 +1,1 @@
-export * from './ColorPalete';
-export * from '../ColorCell/ColorCell';
+export { default as ColorPalete } from './ColorPalete';

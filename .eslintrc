@@ -1,0 +1,117 @@
+// {
+//   "extends": ["next/core-web-vitals", "airbnb",
+//   "eslint:recommended",
+//   "plugin:react/recommended",
+//   "plugin:@typescript-eslint/recommended",
+//   "plugin:security/recommended",
+//   "prettier"]
+// }
+
+{
+  "env": {
+    "es6": true,
+    "jest": true,
+    "browser": true,
+    "node": true
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:security/recommended",
+    "prettier",
+    "next/core-web-vitals"
+  ],
+  "plugins": ["@typescript-eslint", "prettier", "security", "import"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "security/detect-object-injection": 2,
+    "security/detect-non-literal-fs-filename": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "prettier/prettier": 2,
+    "trailing-comma": ["off"],
+    "no-use-before-define": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-console": "off",
+    "react/react-in-jsx-scope": "off",
+    "array-callback-return": "off",
+    "no-restricted-exports": "off",
+    "no-restricted-syntax": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@next/next/no-img-element": "off",
+    "react/jsx-props-no-spreading": 0,
+    "react/require-default-props": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "comma-dangle": ["off"],
+    "eol-last": 0,
+    "no-underscore-dangle": ["error", { "allow": ["_id", "__typename", "_source"] }],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next/*",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "next", "next/*"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}

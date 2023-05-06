@@ -1,19 +1,20 @@
 'use client';
+
 import * as React from 'react';
+import { useState } from 'react';
+import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
+import { ListItemIcon } from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import { NAVIGATION_MENU } from '@constants/app';
-import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
-import { ListItemIcon } from '@mui/material';
-import { useState } from 'react';
+import Toolbar from '@mui/material/Toolbar';
 import Typography from '@components/Typography';
+import { NAVIGATION_MENU } from '@constants/app';
 import { SIZE } from '@theme/styles';
 
-export default function AppSideBar() {
+const AppSideBar = () => {
   const [currentMenuIndex, setCurrentMenuIndex] = useState(0);
 
   const onMenuClickHandler = (menuIndex: number) => {
@@ -52,7 +53,7 @@ export default function AppSideBar() {
                 <ListItemIcon>
                   <PaletteOutlinedIcon />
                 </ListItemIcon>
-                <Typography tag={'body2'} text={text} />
+                <Typography tag="body2" text={text} />
               </ListItemButton>
             </ListItem>
           ))}
@@ -60,4 +61,6 @@ export default function AppSideBar() {
       </Box>
     </Drawer>
   );
-}
+};
+
+export default AppSideBar;

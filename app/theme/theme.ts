@@ -1,6 +1,5 @@
 import { Color } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
-
 import { SIZE, FONT, I_SIZE, I_FONT, TYPOGRAPHY } from './styles';
 
 declare module '@mui/material/styles' {

@@ -1,12 +1,13 @@
 'use client';
+
 import * as React from 'react';
+import { useContext, useState } from 'react';
 import { Stack } from '@mui/material';
+import ColorCell from '@components/ColorCell';
+import Typography from '@components/Typography/Typography';
 import { MOCKDATA } from '@constants';
 import { COLORS } from '@styles';
-import ColorCell from '@components/ColorCell';
 import { IColorPaleteBucket, createColorPaletteContext } from '@types';
-import { useContext, useState } from 'react';
-import Typography from '@components/Typography/Typography';
 
 interface IColorPaleteProps {
   colorPallete: IColorPaleteBucket;
@@ -16,8 +17,8 @@ interface IColorPaleteProps {
 const ColorPalete = ({ colorPallete, stateChangeHandler }: IColorPaleteProps) => {
   const { selectedPaletteIndex, pickedColor, colorBucket } = useContext(createColorPaletteContext);
   const [paletteIndex, setPaletteIndex] = useState(0);
-  const onPaletteClickHandler = (paletteIndex: number) => {
-    setPaletteIndex(paletteIndex);
+  const onPaletteClickHandler = (index: number) => {
+    setPaletteIndex(index);
     // colorBucket[paletteIndex].color = pickedColor;
   };
   return (

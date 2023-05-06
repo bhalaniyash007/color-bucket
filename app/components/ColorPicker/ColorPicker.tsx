@@ -1,6 +1,6 @@
-import { IColor } from '@types';
 import { useState } from 'react';
 import { SketchPicker } from 'react-color';
+import { IColor } from '@types';
 
 interface IColorPickerProps {
   selectedColor: IColor;
@@ -13,15 +13,13 @@ const ColorPicker = ({
 }: IColorPickerProps) => {
   const [sketchPickerColor, setSketchPickerColor] = useState(selectedColor.color);
   return (
-    <>
-      <SketchPicker
-        color={sketchPickerColor}
-        onChange={(color) => {
-          setSketchPickerColor(color.hex.slice(1));
-          setColorHandler(color.hex.slice(1));
-        }}
-      />
-    </>
+    <SketchPicker
+      color={sketchPickerColor}
+      onChange={(color) => {
+        setSketchPickerColor(color.hex.slice(1));
+        setColorHandler(color.hex.slice(1));
+      }}
+    />
   );
 };
 
