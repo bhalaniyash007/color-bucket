@@ -1,9 +1,8 @@
-import { Color } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+import { Color } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import { SIZE, FONT, I_SIZE, I_FONT, TYPOGRAPHY } from './styles';
 
-import { SIZE, FONT, I_SIZE, I_FONT, TYPOGRAPHY, COLORS } from "./styles";
-
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface Palette {
     green: Partial<Color>;
     white: Partial<Color>;

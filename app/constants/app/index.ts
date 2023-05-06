@@ -1,1 +1,1 @@
-export const NAVIGATION_MENU = ["All Colors"];
+export const NAVIGATION_MENU = ['All Colors'];

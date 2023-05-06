@@ -1,1 +1,1 @@
-export * from "./AppSideBar";
+export { default as AppSideBar } from './AppSideBar';

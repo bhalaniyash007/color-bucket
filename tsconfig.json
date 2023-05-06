@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": "./app",
+    "sourceMap": true,
     "plugins": [
       {
         "name": "next"
@@ -28,8 +29,8 @@
       "@types/*": ["types/*"],
       "@constants": ["constants"],
       "@constants/*": ["constants/*"],
-      "@styles" : ["theme/styles"],
-      "@styles/*" : ["theme/styles/*"],
+      "@styles": ["theme/styles"],
+      "@styles/*": ["theme/styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

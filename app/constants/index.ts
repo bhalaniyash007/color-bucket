@@ -1,1 +1,1 @@
-export * as MOCKDATA from "./mocks";
+export * as MOCKDATA from './mocks';

@@ -1,0 +1,6 @@
+.husky
+build_scripts
+dist/*
+node_modules
+public
+yarn.lock

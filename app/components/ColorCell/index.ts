@@ -1,1 +1,1 @@
-export { default } from "./ColorCell";
+export { default } from './ColorCell';

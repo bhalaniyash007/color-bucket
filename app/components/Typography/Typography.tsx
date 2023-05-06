@@ -1,11 +1,8 @@
-"use client";
-import { useMemo, CSSProperties, ReactNode } from "react";
-import {
-  styled,
-  Typography as MuiTypography,
-  TypographyProps,
-} from "@mui/material";
-import { HtmlTags } from "@types";
+'use client';
+
+import { useMemo, CSSProperties, ReactNode } from 'react';
+import { styled, Typography as MuiTypography, TypographyProps } from '@mui/material';
+import { HtmlTags } from '@types';
 
 interface ITypographyProps extends TypographyProps {
   text?: string | ReactNode;
@@ -15,16 +12,14 @@ interface ITypographyProps extends TypographyProps {
   children?: ReactNode;
 }
 
-const StyledTypography = styled(MuiTypography)<TypographyProps>(
-  ({ theme }) => ({
-    fontFamily: [theme.font.family.PRIMARY].join(","),
-  })
-);
+const StyledTypography = styled(MuiTypography)<TypographyProps>(({ theme }) => ({
+  fontFamily: [theme.font.family.PRIMARY].join(','),
+}));
 
 const Typography = ({
-  text = "",
+  text = '',
   style = {},
-  tag = "body1",
+  tag = 'body1',
   gutterBottom = false,
   children,
   ...restProps
@@ -32,12 +27,7 @@ const Typography = ({
   const typoStyle = useMemo(() => ({ ...style }), [style]);
 
   return (
-    <StyledTypography
-      {...restProps}
-      variant={tag}
-      style={typoStyle}
-      gutterBottom={gutterBottom}
-    >
+    <StyledTypography {...restProps} variant={tag} style={typoStyle} gutterBottom={gutterBottom}>
       {text || children}
     </StyledTypography>
   );
